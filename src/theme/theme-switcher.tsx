@@ -1,11 +1,10 @@
 import { useTheme } from "./context/useTheme";
-
 export default function ThemeSwitcher() {
   const { theme, toggleTheme } = useTheme();
   const isDark = theme === "dark";
 
   return (
-    <div className="flex items-center gap-3">
+    <nav className="flex items-center gap-2  md:gap-4" aria-label="Main controls">
       <button
         onClick={toggleTheme}
         aria-label="Toggle Theme"
@@ -23,6 +22,6 @@ export default function ThemeSwitcher() {
       <span className="text-sm font-medium text-text-primary">
         {isDark ? "Dark Mode" : "Light Mode"}
       </span>
-    </div>
+    </nav>
   );
 }

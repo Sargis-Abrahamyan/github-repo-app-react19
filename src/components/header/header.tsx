@@ -1,4 +1,4 @@
-import ThemeSwitcher from "../theme/theme-switcher";
+import ThemeSwitcher from "../../theme/theme-switcher";
 import { FaGithub } from "react-icons/fa";
 
 export default function Header() {

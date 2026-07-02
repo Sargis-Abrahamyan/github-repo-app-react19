@@ -1,20 +1,19 @@
 import { useState, type ChangeEvent } from "react";
 import { FaSearch } from "react-icons/fa";
-import useDebounce from "../../hooks/useDebounce";
+// this must using when the search term is changed, to avoid making too many requests to the API.
+// import useDebounce from "../../hooks/useDebounce";
 
 export default function SearchBar() {
   const [searchTerm, setSearchTerm] = useState<string| null>("");
-  const debouncedValue = useDebounce({ value: searchTerm?? "", daley: 800 });
+  // const debouncedValue = useDebounce({ value: searchTerm?? "", delay: 800 });
 
   const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
     setSearchTerm(e.target.value);
   };
 
-  console.log(debouncedValue, "debouncedValue");
-
   return (
     <div
-      className="flex items-center gap-2 max-w-4xl rounded-2xl px-3 border-2 border-border-main bg-bg-surface transition-all duration-300 ease-in-out
+      className="flex-1 flex items-center gap-2 max-w-4xl rounded-2xl px-3 border-2 border-border-main bg-bg-surface transition-all duration-300 ease-in-out
     focus-within:border-border-focus focus-within:shadow-md"
     >
       <FaSearch

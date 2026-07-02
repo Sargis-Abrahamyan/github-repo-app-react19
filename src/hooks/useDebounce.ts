@@ -2,21 +2,21 @@ import { useEffect, useState } from "react";
 
 type DebounceType = {
   value: string;
-  daley: number;
+  delay: number;
 };
 
-export default function useDebounce({ value, daley }: DebounceType) {
+export default function useDebounce({ value, delay }: DebounceType) {
   const [debouncedValue, setDebouncedValue] = useState<string>(value);
 
   useEffect(() => {
     const handler = setTimeout(() => {
       setDebouncedValue(value);
-    }, daley);
+    }, delay);
 
     return () => {
       clearTimeout(handler);
     };
-  }, [daley, value]);
+  }, [delay, value]);
 
   return debouncedValue;
 }

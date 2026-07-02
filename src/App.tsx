@@ -1,11 +1,17 @@
-import Header from "./components/header";
-import RepoSearchFilters from "./components/repo-search-filters";
+import Header from "./components/header/header";
+import FilterBarRepoLanguage from "./components/repo-search-filters/filterBar-repo-language";
+import SearchBar from "./components/repo-search-filters/search-bar";
+import SortRepo from "./components/repo-search-filters/sort-repo";
 
 export default function App() {
   return (
-    <div className="min-h-screen  bg-bg-main text-text-primary transition-colors duration-200">
+    <div className="min-h-screen bg-bg-main text-text-primary transition-colors duration-200">
       <Header />
-      <RepoSearchFilters/>
+      <div className="flex items-center gap-x-3 p-4 ">
+        <SearchBar />
+        <FilterBarRepoLanguage />
+        <SortRepo />
+      </div>
     </div>
   );
 }
